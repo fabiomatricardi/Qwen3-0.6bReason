@@ -10,6 +10,24 @@ Local LLM run from [HF repo](https://hf-mirror.com/Qwen/Qwen3-0.6B). Using [Bart
 pip install rich openai
 ```
 
+### How to use
+llamaCPP AVX2 binaries are in the ZIP archive of this repo.
+
+Download it and extract in themainproject directory
+
+In one terminal run:
+```
+llama-server.exe -m .\Qwen_Qwen3-0.6B-Q8_0.gguf -c 8192
+```
+this command will start an openAI standard API server at localhost:8080
+
+> Note that Qwen30.6b has a max context window of 32k, so you can change `-c 32768`
+
+In another terminal, with the `venv` activated, run
+```
+python QWEN3-0.6B-it.py 
+```
+
 
 ### Reasoning flags
 Qwen API and Transformers tokenizers chat template have a dedicated flag to activate the reasoning.
